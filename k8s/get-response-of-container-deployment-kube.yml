@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: get-response-of-container-deployment
+  name: get-response-of-container-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: get-response-of-container-deployment
+  template:
+    metadata:
+      labels:
+        run: get-response-of-container-deployment
+    spec:
+      containers:
+      - name: get-response-of-container-deployment
+        image: get-response-of-container-deployment:latest
+        imagePullPolicy: IfNotPresent
